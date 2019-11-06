@@ -33,7 +33,7 @@ func main() {
 	// 	Claims:     &jwtCustomClaims{},
 	// 	SigningKey: []byte("secret"),
 	// }
-	r.Use(middleware.JWTWithConfig(config))
+	//r.Use(middleware.JWTWithConfig(config))
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
