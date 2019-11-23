@@ -27,5 +27,4 @@ func Connect(callback func(database *gorm.DB)) {
 	defer db.Close()
 	db.LogMode(true)
 	callback(db)
-
 }

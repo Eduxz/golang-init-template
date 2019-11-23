@@ -1,8 +1,8 @@
 package migrations
 
 import (
-	pg "conections"
-	model "models"
+	pg "github.com/firebase-golang/conections"
+	model "github.com/firebase-golang/models"
 
 	"github.com/jinzhu/gorm"
 

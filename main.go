@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	m "migration"
+	m "github.com/firebase-golang/migration"
 
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
@@ -29,11 +29,11 @@ func main() {
 	r := e.Group("/restricted")
 
 	// Configure middleware with the custom claims type
-	// config := middleware.JWTConfig{
-	// 	Claims:     &jwtCustomClaims{},
-	// 	SigningKey: []byte("secret"),
-	// }
-	//r.Use(middleware.JWTWithConfig(config))
+	config := middleware.JWTConfig{
+		Claims:     &jwtCustomClaims{},
+		SigningKey: []byte("secret"),
+	}
+	r.Use(middleware.JWTWithConfig(config))
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
