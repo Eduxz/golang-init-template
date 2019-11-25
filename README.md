@@ -14,10 +14,6 @@ Necesitan tener instalado todas las dependencias para correr un proyecto en gola
 
 Con usar el comando "dep ensure" las dependencias pueden ser agregadas y descargadas automaticamente.
 
-## Deployment 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
-
 ## Construido con 🛠️
 
 Use ECHO para los request y GORM como ORM.
