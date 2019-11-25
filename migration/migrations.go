@@ -1,22 +1,27 @@
 package migrations
 
 import (
-	pg "github.com/firebase-golang/conections"
-	model "github.com/firebase-golang/models"
+	pg "github.com/firebase-golang/connections"
+	"github.com/firebase-golang/models"
+	"github.com/firebase-golang/seeder"
 
 	"github.com/jinzhu/gorm"
-
-	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
-type any interface{}
-
-//Migrate all table
+//Migrate all tables and seeders
 func Migrate() {
 	// Creating Tables
-	pg.Connect(tables)
+	pg.QueryPG(tables)
+	// Seeders
+	pg.QueryPG(seeders)
 }
 
 func tables(db *gorm.DB) {
-	db.AutoMigrate(model.User{})
+	db.AutoMigrate(models.Role{})
+	db.AutoMigrate(models.User{})
+	db.Model(&models.User{}).AddForeignKey("role", "roles(name)", "RESTRICT", "RESTRICT")
+}
+
+func seeders(db *gorm.DB) {
+	seeder.RoleSeeder(db)
 }
