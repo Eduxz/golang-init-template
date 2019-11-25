@@ -19,6 +19,7 @@ func SetRoutes() *echo.Echo {
 	e.Use(middleware.Logger())
 	//e.Use(middleware.Recover())
 
+	staticRoutes(e)
 	publicRoutes(e)
 	privateRoutes(e.Group("/private"))
 	return e
