@@ -1,7 +1,7 @@
 package seeder
 
 import (
-	"github.com/firebase-golang/models"
+	"github.com/firebase-golang/app/models"
 	"github.com/jinzhu/gorm"
 )
 

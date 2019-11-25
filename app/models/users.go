@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/firebase-golang/connections"
+	"github.com/firebase-golang/database/connections"
 
 	"github.com/jinzhu/gorm"
 	"golang.org/x/crypto/bcrypt"

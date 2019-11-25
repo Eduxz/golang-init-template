@@ -4,11 +4,11 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/firebase-golang/connections"
-	"github.com/firebase-golang/models"
+	"github.com/firebase-golang/app/models"
+	"github.com/firebase-golang/database/connections"
 
 	"github.com/dgrijalva/jwt-go"
-	"github.com/firebase-golang/utils"
+	"github.com/firebase-golang/app/utils"
 	"github.com/labstack/echo"
 )
 

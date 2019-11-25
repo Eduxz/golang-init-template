@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"github.com/firebase-golang/controllers"
-	"github.com/firebase-golang/utils"
+	"github.com/firebase-golang/app/controllers"
+	"github.com/firebase-golang/app/utils"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 )

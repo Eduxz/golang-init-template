@@ -1,9 +1,9 @@
-package migrations
+package migration
 
 import (
-	pg "github.com/firebase-golang/connections"
-	"github.com/firebase-golang/models"
-	"github.com/firebase-golang/seeder"
+	"github.com/firebase-golang/app/models"
+	"github.com/firebase-golang/database/connections"
+	"github.com/firebase-golang/database/seeder"
 
 	"github.com/jinzhu/gorm"
 )
@@ -11,9 +11,9 @@ import (
 //Migrate all tables and seeders
 func Migrate() {
 	// Creating Tables
-	pg.QueryPG(tables)
+	connections.QueryPG(tables)
 	// Seeders
-	pg.QueryPG(seeders)
+	connections.QueryPG(seeders)
 }
 
 func tables(db *gorm.DB) {

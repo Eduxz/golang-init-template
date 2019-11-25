@@ -1,12 +1,12 @@
 package main
 
 import (
-	m "github.com/firebase-golang/migration"
-	"github.com/firebase-golang/routes"
+	"github.com/firebase-golang/app/routes"
+	"github.com/firebase-golang/database/migration"
 )
 
 func main() {
-	m.Migrate()
+	migration.Migrate()
 	e := routes.SetRoutes()
 	e.Logger.Fatal(e.Start(":1323"))
 }
